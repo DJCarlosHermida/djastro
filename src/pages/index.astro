@@ -1,11 +1,60 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Navbar from "../components/Navbar/Navbar.jsx";
+import "bootstrap/dist/css/bootstrap.min.css";
+import ItemListContainer from "../components/ItemListContainer/ItemListContainer.jsx";
+import Inicio from "../components/Inicio/Inicio.jsx";
+import Footer from "../components/Footer/Footer.jsx";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import ItemDetailContainer from "../components/ItemDetailContainer/ItemDetailContainer.jsx";
+import Nosotros from "../components/Nosotros/Nosotros.jsx";
+import Contacto from "../components/Contacto/Contacto.jsx";
+import Cart from "../components/Cart/Cart.jsx";
+import { CartProvider } from "../context/CartContext.jsx";
+import LoginScreen from "../components/LoginScreen/LoginScreen.jsx";
+import { LoginProvider } from "../context/LoginContext.jsx";
+import Checkout from "../components/Checkout/Checkout.jsx";
 ---
 
-<Layout>
-	<Welcome />
-</Layout>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<title>Inicio - Página Principal</title>
+	</head>
+	<body>
+		<LoginProvider>
+			<CartProvider>
+				<BrowserRouter>
+					<Navbar />
+					<Routes>
+						<Route path="/" element={(<Inicio />)} />
+						<Route
+							path="/productos"
+							element={(<ItemListContainer />)}
+						/>
+						<Route
+							path="/productos/:categoryId"
+							element={(<ItemListContainer />)}
+						/>
+						<Route
+							path="/detail/:itemId"
+							element={(<ItemDetailContainer />)}
+						/>
+						<Route path="/nosotros" element={(<Nosotros />)} />
+						<Route path="/contacto" element={(<Contacto />)} />
+						<Route path="/cart" element={(<Cart />)} />
+						<Route path="/checkout" element={(<Checkout />)} />
+						<Route path="/login" element={(<LoginScreen />)} />
+						<Route path="*" element={(<Navigate to={"/"} />)} />
+					</Routes>
+					<Footer />
+				</BrowserRouter>
+			</CartProvider>
+		</LoginProvider>
+	</body>
+</html>
+
+<style>
+	body {
+		background-color: whitesmoke;
+	}
+</style>
