@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import emailjs from 'emailjs-com';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faInstagram, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -36,8 +38,8 @@ const Contact = () => {
   return (
     <section>
       <h3>Contacto</h3>
-        <p><i>Ante cualquier consulta, duda o comentario, no dudes en utilizar las siguientes vías de comunicación. </i><p>
-        </p></p>
+      <p><i>Ante cualquier consulta, duda o comentario, no dudes en utilizar las siguientes vías de comunicación. </i><p>
+      </p></p>
       <hr />
 
 
@@ -51,6 +53,7 @@ const Contact = () => {
             value={formData.name}
             onChange={handleChange}
             required
+            placeholder='Nombre'
           />
         </div>
         <div>
@@ -62,6 +65,7 @@ const Contact = () => {
             value={formData.email}
             onChange={handleChange}
             required
+            placeholder='Email'
           />
         </div>
         <div>
@@ -72,6 +76,7 @@ const Contact = () => {
             value={formData.message}
             onChange={handleChange}
             required
+            placeholder='Mensaje'
           />
         </div>
         <button type="submit">Enviar</button>
@@ -79,14 +84,19 @@ const Contact = () => {
       <hr />
       {/* Datos de Contacto Adicionales */}
       <p>Contacto: <a href="mailto:djcarloshermida@outlook.es" target='_blank'>djcarloshermida@outlook.es</a></p>
-      <p>Teléfono: <a href="https://wa.me/59891332854" target="_blank">(+598) 091 332 854</a>
-      <p>Dirección: Doña Soledad 4760, Montevideo, Uruguay</p>
-        </p>
+      <p>Teléfono: <a href="https://wa.me/59891332854" target="_blank">(+598) 091 332 854</a></p>
+      <p>Dirección: <a href="https://maps.app.goo.gl/yjRagfd3kYT9aV1s6" target='_blank'>Doña Soledad 4760, Montevideo, Uruguay</a>  </p>
+
+
 
       {/* Enlaces a Redes Sociales */}
       <div className="social-media-links">
-        <a href="https://www.instagram.com/djcarloshermida" title='Instagram' target="_blank" rel="noopener noreferrer">Instagram</a>
-        <a href="https://www.linkedin.com/in/djcarloshermida" title='Linkedin' target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://www.instagram.com/djcarloshermida" title='Instagram' target="_blank" rel="noopener noreferrer">
+          <FontAwesomeIcon icon={faInstagram} size="2x" />
+        </a>
+        <a href="https://www.linkedin.com/in/djcarloshermida" title='Linkedin' target="_blank" rel="noopener noreferrer">
+          <FontAwesomeIcon icon={faLinkedin} size="2x" />
+        </a>
       </div>
     </section>
   );
