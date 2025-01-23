@@ -4,7 +4,9 @@ const Aboutus = () => {
     return (
         <section>
             <h3>Sobre Nosotros</h3>
+            <hr />
         </section>
+
     );
 };
 

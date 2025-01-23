@@ -93,3 +93,21 @@ footer {
   bottom: 0;
   width: 100%;
 }
+
+/* Estilos adicionales para los enlaces de redes sociales */
+.social-media-links {
+  margin: 20px 0;
+  text-align: center;
+}
+
+.social-media-links a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: #333;
+  border-radius: 20%;
+}
+
+.social-media-links a:hover {
+  color: black;
+
+}
