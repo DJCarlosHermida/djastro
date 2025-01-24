@@ -2,9 +2,13 @@ import React from "react";
 
 const Home = () => {
     return (
-        <section>
-         <h1>DJCarlos Hermida</h1>
-         <h5><i>music & web</i></h5>
+        <section className="section1">
+            <h1>DJCARLOS HERMIDA
+                <br />
+            </h1>
+            <h6>
+                <i className="slogan">music & web</i>
+            </h6>
         </section>
     );
 };

@@ -39,6 +39,106 @@ nav ul li a {
 
 nav ul li a:hover {
   background-color: #555;
+  color: orange;
+}
+
+section {
+  padding: 20px;
+  background-color: #fff;
+  margin: 20px auto;
+  width: 80%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 30px;
+  box-shadow: #333;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+form div {
+  margin-bottom: 10px;
+}
+
+form label {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+form input,
+form textarea {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+}
+
+form button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  background-color: #333;
+  color: #fff;
+  cursor: pointer;
+}
+
+form button:hover {
+  background-color: #555;
+}
+
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 10px 0;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+/* Estilos generales para dispositivos de escritorio */
+body {
+  font-family: Candara;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 0;
+  text-align: center;
+}
+
+nav {
+  background-color: #444;
+  padding: 10px 0;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+nav ul li {
+  display: inline;
+  margin: 0 10px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+nav ul li a:hover {
+  background-color: #555;
 }
 
 section {
@@ -94,7 +194,17 @@ footer {
   width: 100%;
 }
 
-/* Estilos adicionales para los enlaces de redes sociales */
+.map-container {
+  margin: 20px 0;
+  text-align: center;
+}
+
+.map-container iframe {
+  width: 100%;
+  height: 450px;
+  border: 0;
+}
+
 .social-media-links {
   margin: 20px 0;
   text-align: center;
@@ -104,10 +214,132 @@ footer {
   margin: 0 10px;
   text-decoration: none;
   color: #333;
-  border-radius: 20%;
+  font-size: 24px;
 }
 
 .social-media-links a:hover {
-  color: black;
+  color: #555;
+}
 
+/* Estilos del Menú Hamburguesa */
+.hamburger-menu {
+  display: none;
+  /* Oculto por defecto */
+  position: relative;
+  z-index: 1000;
+  /* Asegurar que esté por encima de otros elementos */
+}
+
+.menu-button {
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  z-index: 1001;
+  /* Asegurar que el botón esté por encima */
+}
+
+.nav-menu {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  background-color: #333;
+  /* Asegurar contraste suficiente */
+  position: absolute;
+  top: 50px;
+  /* Asegurar que aparezca debajo del botón */
+  left: 0;
+  z-index: 1000;
+  /* Asegurar que esté visible */
+}
+
+.nav-menu.open {
+  display: flex;
+  /* Mostrar cuando esté abierto */
+}
+
+.nav-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+.nav-menu ul li {
+  margin: 10px 0;
+}
+
+.nav-menu ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.nav-menu ul li a:hover {
+  color: orange;
+  background-color: #555;
+}
+
+/* Media Query para dispositivos móviles */
+@media (max-width: 768px) {
+  .desktop-nav {
+    display: none;
+    /* Ocultar menú de escritorio */
+  }
+
+  .hamburger-menu {
+    display: flex;
+    /* Mostrar menú hamburguesa */
+  }
+
+  .nav-menu {
+    display: table-column;
+    /* Mostrar el contenedor del menú hamburguesa */
+  }
+}
+
+.section1 {
+  background-image: url(../assets/controlador.jpg);
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  height: 450px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.section1 h1, h5 {
+  background-color: rgba(0, 0, 0, 0.485);
+  color: white;
+  font-size: 45px;
+  text-align: center;
+  justify-items: center;
+  align-items: center;
+  margin-top: 4em;
+  animation-duration: 4s;
+  animation-name: aparecer;
+}
+
+.slogan {
+  background-color: rgba(0, 0, 0, 0.485);
+  color: white;
+  font-size: 20px;
+  margin-left: 45%;
+  animation-duration: 4s;
+  animation-name: aparecer;
+}
+
+@keyframes aparecer {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }

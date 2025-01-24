@@ -28,6 +28,11 @@ const Contact = () => {
       .then((response) => {
         console.log('Correo enviado con éxito:', response.status, response.text);
         alert('Correo enviado con éxito!');
+        setFormData({
+          name: '',
+          email: '',
+          message: ''
+        })
       })
       .catch((error) => {
         console.error('Error al enviar el correo:', error);
@@ -38,8 +43,12 @@ const Contact = () => {
   return (
     <section>
       <h3>Contacto</h3>
-      <p><i>Ante cualquier consulta, duda o comentario, no dudes en utilizar las siguientes vías de comunicación. </i><p>
-      </p></p>
+      <div>
+        <p><i>Ante cualquier consulta, duda o comentario, no dudes en utilizar las siguientes vías de
+          comunicación.</i>
+          </p>
+
+      </div>
       <hr />
 
 
@@ -54,6 +63,7 @@ const Contact = () => {
             onChange={handleChange}
             required
             placeholder='Nombre'
+            title='Ingrese su Nombre'
           />
         </div>
         <div>
@@ -66,6 +76,7 @@ const Contact = () => {
             onChange={handleChange}
             required
             placeholder='Email'
+            title='Ingrese su Correo'
           />
         </div>
         <div>
@@ -77,15 +88,16 @@ const Contact = () => {
             onChange={handleChange}
             required
             placeholder='Mensaje'
+            title='Ingrese su Consulta, Duda o Comentario'
           />
         </div>
         <button type="submit">Enviar</button>
       </form>
       <hr />
       {/* Datos de Contacto Adicionales */}
-      <p>Contacto: <a href="mailto:djcarloshermida@outlook.es" target='_blank'>djcarloshermida@outlook.es</a></p>
-      <p>Teléfono: <a href="https://wa.me/59891332854" target="_blank">(+598) 091 332 854</a></p>
-      <p>Dirección: <a href="https://maps.app.goo.gl/yjRagfd3kYT9aV1s6" target='_blank'>Doña Soledad 4760, Montevideo, Uruguay</a>  </p>
+      <p>Contacto: <a href="mailto:djcarloshermida@outlook.es" target='_blank' title='Enviar correo electrónico'>djcarloshermida@outlook.es</a></p>
+      <p>Teléfono: <a href="https://wa.me/59891332854" target="_blank" title='Iniciar chat'>(+598) 091 332 854</a></p>
+      <p>Dirección: <a href="https://maps.app.goo.gl/yjRagfd3kYT9aV1s6" target='_blank' title='Dirección'>Doña Soledad 4760, Montevideo, Uruguay</a>  </p>
 
 
 
