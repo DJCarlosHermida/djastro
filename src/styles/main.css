@@ -343,3 +343,7 @@ footer {
     opacity: 1;
   }
 }
+
+.enviar{
+  border-radius: 10px;
+}

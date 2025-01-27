@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import emailjs from 'emailjs-com';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faInstagram, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import Swal from 'sweetalert2';
+
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -27,7 +29,12 @@ const Contact = () => {
     emailjs.send(serviceID, templateID, formData, userID)
       .then((response) => {
         console.log('Correo enviado con éxito:', response.status, response.text);
-        alert('Correo enviado con éxito!');
+        Swal.fire({
+          title: "Correo enviado con éxito",
+          icon: "success",
+          draggable: true,
+          timer: 2200
+        });
         setFormData({
           name: '',
           email: '',
@@ -36,7 +43,12 @@ const Contact = () => {
       })
       .catch((error) => {
         console.error('Error al enviar el correo:', error);
-        alert('Hubo un error al enviar el correo. Por favor, inténtalo de nuevo.');
+        Swal.fire({
+          icon: "error",
+          title: "Oops... hubo un error al enviar el correo. Por favor, inténtelo de nuevo...",
+          timer: 2200
+        });
+
       });
   };
 
@@ -46,7 +58,7 @@ const Contact = () => {
       <div>
         <p><i>Ante cualquier consulta, duda o comentario, no dudes en utilizar las siguientes vías de
           comunicación.</i>
-          </p>
+        </p>
 
       </div>
       <hr />
@@ -91,7 +103,7 @@ const Contact = () => {
             title='Ingrese su Consulta, Duda o Comentario'
           />
         </div>
-        <button type="submit">Enviar</button>
+        <button className='enviar' type="submit">Enviar</button>
       </form>
       <hr />
       {/* Datos de Contacto Adicionales */}

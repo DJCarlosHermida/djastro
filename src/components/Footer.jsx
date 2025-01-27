@@ -5,7 +5,7 @@ const Footer = () => {
         <footer>
             <p>
                 &copy; {new Date().getFullYear()} Todos los derechos reservados. <br />
-                <a href="mailto:djcarloshermida@outlook.com" target='_blank'><i>djcarloshermida</i></a> <br />
+                <a href="mailto:djcarloshermida.dch@gmail.com" target='_blank'><i>djcarloshermida</i></a>
             </p>
         </footer>
     );
