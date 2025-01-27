@@ -111,8 +111,6 @@ const Contact = () => {
       <p>Teléfono: <a href="https://wa.me/59891332854" target="_blank" title='Iniciar chat'>(+598) 091 332 854</a></p>
       <p>Dirección: <a href="https://maps.app.goo.gl/yjRagfd3kYT9aV1s6" target='_blank' title='Dirección'>Doña Soledad 4760, Montevideo, Uruguay</a>  </p>
 
-
-
       {/* Enlaces a Redes Sociales */}
       <div className="social-media-links">
         <a href="https://www.instagram.com/djcarloshermida" title='Instagram' target="_blank" rel="noopener noreferrer">
