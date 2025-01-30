@@ -121,8 +121,9 @@ const Contact = () => {
           <FontAwesomeIcon icon={faLinkedin} size="2x" />
         </a>
       </div>
-
-      <Chat />
+      <div>
+        <Chat />
+      </div>
     </section>
   );
 };

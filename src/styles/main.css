@@ -350,7 +350,7 @@ footer {
 
 /* ESTILOS CHAT */
 
-#chat-container {
+.chat-container {
   background-color: #ffffff;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -360,7 +360,7 @@ footer {
   margin: 20px auto;
 }
 
-#message-list {
+.message-list {
   list-style: none;
   padding: 0;
   margin: 0;
@@ -383,11 +383,11 @@ footer {
 
 .message.bot {
   background-color: #e0e0e0;
-  color: #000000;
+  color: red;
   text-align: left;
 }
 
-#message-input {
+.message-input {
   width: calc(100% - 22px);
   padding: 10px;
   border: 1px solid #cccccc;
@@ -395,8 +395,8 @@ footer {
   margin: 10px 0;
 }
 
-#send-button {
-  background-color: #007bff;
+.send-button {
+  background-color: green;
   color: #ffffff;
   border: none;
   padding: 10px 20px;
@@ -404,6 +404,6 @@ footer {
   cursor: pointer;
 }
 
-#send-button:hover {
+.send-button:hover {
   background-color: #0056b3;
 }

@@ -1,18 +1,19 @@
-require('dotenv').config();
+import * as dotenv from 'dotenv';
+dotenv.config();
 
-const express = require('express');
-const http = require('http');
-const socketIo = require('socket.io');
-const { Configuration, OpenAIApi } = require('openai');
+import express from 'express';
+import http from 'http';
+import { Server } from 'socket.io';
+import { Configuration, OpenAIApi } from 'openai';
 
 const app = express();
 const server = http.createServer(app);
-const io = socketIo(server);
+const io = new Server(server);
 
-const configuration = new Configuration({
+const openaiConfiguration = new Configuration({
     apiKey: process.env.OPENAI_API_KEY,
 });
-const openai = new OpenAIApi(configuration);
+const openai = new OpenAIApi(openaiConfiguration);
 
 io.on('connection', (socket) => {
     console.log('Nuevo cliente conectado');

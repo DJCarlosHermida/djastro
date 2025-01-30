@@ -21,7 +21,7 @@ const Chat = () => {
     };
 
     return (
-        <div>
+        <div className='chat-container'>
             <div>
                 {mensajes.map((msg, index) => (
                     <p key={index} style={{ textAlign: msg.esRespuesta ? 'left' : 'right' }}>
@@ -31,10 +31,11 @@ const Chat = () => {
             </div>
             <input
                 type="text"
+                placeholder='mensaje'
                 value={mensaje}
                 onChange={(e) => setMensaje(e.target.value)}
             />
-            <button onClick={enviarMensaje}>Enviar</button>
+            <button onClick={enviarMensaje} title='Enviar'>Enviar</button>
         </div>
     );
 };
