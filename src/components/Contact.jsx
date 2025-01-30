@@ -3,6 +3,7 @@ import emailjs from 'emailjs-com';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faInstagram, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import Swal from 'sweetalert2';
+import Chat from './Chat.jsx';
 
 
 const Contact = () => {
@@ -120,6 +121,8 @@ const Contact = () => {
           <FontAwesomeIcon icon={faLinkedin} size="2x" />
         </a>
       </div>
+
+      <Chat />
     </section>
   );
 };
